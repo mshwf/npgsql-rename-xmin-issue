@@ -40,7 +40,6 @@ namespace MigrationsRunner
             services.AddDbContext<ServerDataContext>(
                 options => options.UseNpgsql(config.GetConnectionString("DatabaseServerMigrations"), builder =>
                 {
-                    builder.MigrationsAssembly("efcore.pg-issue3145.Migrations");
                     builder.MigrationsHistoryTable("migrations_history");
                     builder.SetPostgresVersion(9, 4);
                 }));

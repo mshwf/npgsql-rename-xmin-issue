@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace efcore.pgissue3145.Migrations.Migrations
+namespace efcore.pgissue3145.MigrationsRunner.Migrations
 {
     /// <inheritdoc />
     public partial class Net8 : Migration

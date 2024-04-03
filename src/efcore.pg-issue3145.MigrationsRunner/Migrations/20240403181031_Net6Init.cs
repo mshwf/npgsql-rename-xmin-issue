@@ -3,7 +3,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace efcore.pgissue3145.Migrations.Migrations
+namespace efcore.pgissue3145.MigrationsRunner.Migrations
 {
     public partial class Net6Init : Migration
     {

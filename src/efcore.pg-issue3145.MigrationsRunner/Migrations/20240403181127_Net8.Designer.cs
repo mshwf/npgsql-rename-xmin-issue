@@ -8,10 +8,10 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace efcore.pgissue3145.Migrations.Migrations
+namespace efcore.pgissue3145.MigrationsRunner.Migrations
 {
     [DbContext(typeof(ServerDataContext))]
-    [Migration("20240403174246_Net8")]
+    [Migration("20240403181127_Net8")]
     partial class Net8
     {
         /// <inheritdoc />
