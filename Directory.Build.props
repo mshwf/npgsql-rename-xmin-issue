@@ -1,9 +1,0 @@
-<Project>
-	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-
-		<DefineConstants Condition=" '$(TargetFramework)' == 'net6.0' ">Net6</DefineConstants>
-		<DefineConstants Condition=" '$(TargetFramework)' == 'net8.0' ">Net8</DefineConstants>
-
-	</PropertyGroup>
-</Project>
