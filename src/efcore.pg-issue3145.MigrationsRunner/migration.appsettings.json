@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DatabaseServerMigrations": "server=localhost;port=5432;user id=postgres;password=*****;ApplicationName=efcore.pg-issue3145;database=Db3145;command timeout=0;sslmode=Disable"
+  }
+}

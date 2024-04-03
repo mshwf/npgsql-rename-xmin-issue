@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "efcore.pg-issue3145.MigrationsRunner": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
