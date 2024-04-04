@@ -13,4 +13,4 @@ files that contain changes:
 - Setting.cs
 - ServerDataContext.cs
 
-Note that the project might not run correctly, it's only functional via running migrations as noted above to reproduce the issue.
+Note that the project is only functional via running migrations through EF command-line-tools as noted above to reproduce the issue.

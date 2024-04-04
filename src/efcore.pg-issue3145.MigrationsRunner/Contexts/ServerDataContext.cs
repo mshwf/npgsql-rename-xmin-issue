@@ -15,8 +15,6 @@ namespace Migrations.Context
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.UseSerialColumns();
-            modelBuilder.HasDefaultSchema("public");
 #if Net6
             modelBuilder.Model.GetEntityTypes()
               .SelectMany(e => e.GetProperties()).ToList()

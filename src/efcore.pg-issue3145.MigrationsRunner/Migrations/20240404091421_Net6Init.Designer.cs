@@ -11,18 +11,17 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace efcore.pgissue3145.MigrationsRunner.Migrations
 {
     [DbContext(typeof(ServerDataContext))]
-    [Migration("20240403181031_Net6Init")]
+    [Migration("20240404091421_Net6Init")]
     partial class Net6Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasDefaultSchema("public")
                 .HasAnnotation("ProductVersion", "6.0.28")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
-            NpgsqlModelBuilderExtensions.UseSerialColumns(modelBuilder);
+            NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("Migrations.Entities.Setting", b =>
                 {
@@ -31,7 +30,7 @@ namespace efcore.pgissue3145.MigrationsRunner.Migrations
                         .HasColumnType("bigint")
                         .HasColumnName("id");
 
-                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<long>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
 
                     b.Property<string>("Name")
                         .HasColumnType("text")
@@ -48,7 +47,7 @@ namespace efcore.pgissue3145.MigrationsRunner.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings", "public");
+                    b.ToTable("Settings");
                 });
 #pragma warning restore 612, 618
         }

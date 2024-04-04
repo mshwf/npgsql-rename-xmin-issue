@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
 		<OutputType>Exe</OutputType>
-		<VersionPrefix>1.0.1.0</VersionPrefix>
+		<VersionPrefix>1.0.0.0</VersionPrefix>
 		<Configurations>Debug;Release</Configurations>
 		<Platforms>AnyCPU;x86;x64</Platforms>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
@@ -14,9 +14,6 @@
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.*" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.*" />
-		<PackageReference Include="Microsoft.Extensions.Configuration" Version="6.*" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="6.*" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="6.*" />
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.*" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.*">
 			<PrivateAssets>all</PrivateAssets>
@@ -31,9 +28,6 @@
 	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.*" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.*" />
-		<PackageReference Include="Microsoft.Extensions.Configuration" Version="8.*" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.FileExtensions" Version="8.*" />
-		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="8.*" />
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.*" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.*">
 			<PrivateAssets>all</PrivateAssets>
@@ -43,11 +37,6 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-	</ItemGroup>
-	<ItemGroup>
-		<None Update="migration.appsettings.json">
-			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
-		</None>
 	</ItemGroup>
 
 </Project>

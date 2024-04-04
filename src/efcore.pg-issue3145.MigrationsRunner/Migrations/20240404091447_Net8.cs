@@ -12,7 +12,6 @@ namespace efcore.pgissue3145.MigrationsRunner.Migrations
         {
             migrationBuilder.RenameColumn(
                 name: "xmin",
-                schema: "public",
                 table: "Settings",
                 newName: "version");
         }
@@ -22,7 +21,6 @@ namespace efcore.pgissue3145.MigrationsRunner.Migrations
         {
             migrationBuilder.RenameColumn(
                 name: "version",
-                schema: "public",
                 table: "Settings",
                 newName: "xmin");
         }

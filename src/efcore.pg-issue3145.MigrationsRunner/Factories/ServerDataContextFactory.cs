@@ -1,8 +1,5 @@
-﻿using System;
-using System.IO;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Configuration;
 using Migrations.Context;
 
 namespace Migrations.Factories
@@ -12,15 +9,8 @@ namespace Migrations.Factories
 
         public ServerDataContext CreateDbContext(string[] args)
         {
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-
-            var configuration = new ConfigurationBuilder()
-                .SetBasePath(Path.Combine(Directory.GetCurrentDirectory()))
-                .AddJsonFile("migration.appsettings.json", optional: false, reloadOnChange: true)
-                .Build();
-
             var builder = new DbContextOptionsBuilder<ServerDataContext>();
-            builder.UseNpgsql(configuration.GetConnectionString("DatabaseServerMigrations"));
+            builder.UseNpgsql("test");
             return new ServerDataContext(builder.Options);
         }
     }
