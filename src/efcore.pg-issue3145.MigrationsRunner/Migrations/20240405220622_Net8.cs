@@ -10,19 +10,13 @@ namespace MigrationsRunner.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "xmin",
-                table: "Settings",
-                newName: "version");
+
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.RenameColumn(
-                name: "version",
-                table: "Settings",
-                newName: "xmin");
+
         }
     }
 }

@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MigrationsRunner.Migrations
 {
     [DbContext(typeof(ServerDataContext))]
-    [Migration("20240405211111_Net6Init")]
+    [Migration("20240405220534_Net6Init")]
     partial class Net6Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -47,7 +47,7 @@ namespace MigrationsRunner.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings");
+                    b.ToTable("settings");
                 });
 #pragma warning restore 612, 618
         }

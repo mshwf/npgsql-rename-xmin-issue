@@ -10,7 +10,7 @@ namespace MigrationsRunner.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Settings",
+                name: "settings",
                 columns: table => new
                 {
                     id = table.Column<long>(type: "bigint", nullable: false)
@@ -21,14 +21,14 @@ namespace MigrationsRunner.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Settings", x => x.id);
+                    table.PrimaryKey("PK_settings", x => x.id);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Settings");
+                name: "settings");
         }
     }
 }

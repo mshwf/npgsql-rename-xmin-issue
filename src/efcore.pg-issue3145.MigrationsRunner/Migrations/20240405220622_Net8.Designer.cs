@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace MigrationsRunner.Migrations
 {
     [DbContext(typeof(ServerDataContext))]
-    [Migration("20240405211142_Net8")]
+    [Migration("20240405220622_Net8")]
     partial class Net8
     {
         /// <inheritdoc />
@@ -45,11 +45,11 @@ namespace MigrationsRunner.Migrations
                         .IsConcurrencyToken()
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("xid")
-                        .HasColumnName("version");
+                        .HasColumnName("xmin");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings");
+                    b.ToTable("settings");
                 });
 #pragma warning restore 612, 618
         }

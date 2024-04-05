@@ -42,11 +42,11 @@ namespace MigrationsRunner.Migrations
                         .IsConcurrencyToken()
                         .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("xid")
-                        .HasColumnName("version");
+                        .HasColumnName("xmin");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Settings");
+                    b.ToTable("settings");
                 });
 #pragma warning restore 612, 618
         }
