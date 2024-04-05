@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Migrations.Entities
+namespace MigrationsRunner.Entities
 {
     public class Setting
     {

@@ -7,33 +7,26 @@
 		<Platforms>AnyCPU;x86;x64</Platforms>
 		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
 		<SelfContained>false</SelfContained>
-
-		<DefineConstants Condition=" '$(TargetFramework)' == 'net6.0' ">Net6</DefineConstants>
-		<DefineConstants Condition=" '$(TargetFramework)' == 'net8.0' ">Net8</DefineConstants>
+		<RootNamespace>MigrationsRunner</RootNamespace>
 	</PropertyGroup>
-	<ItemGroup Condition=" '$(TargetFramework)' == 'net6.0' ">
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.*" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.*" />
-		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.*" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.*">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.*">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-	</ItemGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='net6.0'">
+		<DefineConstants>Net6</DefineConstants>
+		<NetVersion>6</NetVersion>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(TargetFramework)'=='net8.0'">
+		<DefineConstants>Net8</DefineConstants>
+		<NetVersion>8</NetVersion>
+	</PropertyGroup>
 
-	<ItemGroup Condition=" '$(TargetFramework)' == 'net8.0' ">
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.*" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="8.*" />
-		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.*" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.*">
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="$(NetVersion).*" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="$(NetVersion).*" />
+		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="$(NetVersion).*" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="$(NetVersion).*">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.*">
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="$(NetVersion).*">
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>

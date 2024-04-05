@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Migrations.Context;
+using MigrationsRunner.Context;
 
-namespace Migrations.Factories
+namespace MigrationsRunner.Factories
 {
     public class ServerDataContextFactory : IDesignTimeDbContextFactory<ServerDataContext>
     {

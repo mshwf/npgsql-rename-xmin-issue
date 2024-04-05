@@ -3,28 +3,27 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Migrations.Context;
+using MigrationsRunner.Context;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace efcore.pgissue3145.MigrationsRunner.Migrations
+namespace MigrationsRunner.Migrations
 {
     [DbContext(typeof(ServerDataContext))]
-    [Migration("20240404091447_Net8")]
-    partial class Net8
+    [Migration("20240405211111_Net6Init")]
+    partial class Net6Init
     {
-        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.3")
+                .HasAnnotation("ProductVersion", "6.0.28")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Migrations.Entities.Setting", b =>
+            modelBuilder.Entity("MigrationsRunner.Entities.Setting", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -41,11 +40,10 @@ namespace efcore.pgissue3145.MigrationsRunner.Migrations
                         .HasColumnType("text")
                         .HasColumnName("value");
 
-                    b.Property<uint>("Version")
+                    b.Property<uint>("xmin")
                         .IsConcurrencyToken()
                         .ValueGeneratedOnAddOrUpdate()
-                        .HasColumnType("xid")
-                        .HasColumnName("version");
+                        .HasColumnType("xid");
 
                     b.HasKey("Id");
 

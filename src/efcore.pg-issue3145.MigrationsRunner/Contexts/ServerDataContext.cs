@@ -1,9 +1,9 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Migrations.Entities;
+using MigrationsRunner.Entities;
 using System.Linq;
 
-namespace Migrations.Context
+namespace MigrationsRunner.Context
 {
     public class ServerDataContext : DbContext
     {
@@ -28,7 +28,8 @@ namespace Migrations.Context
 #elif Net8
             modelBuilder.Model.GetEntityTypes()
                             .SelectMany(e => e.GetProperties()).ToList()
-                            .ForEach(p => p.SetColumnName(p.GetColumnName(StoreObjectIdentifier.Table(p.DeclaringType.GetTableName()!, ((IMutableEntityType)p.DeclaringType).GetDefaultSchema()!))?.ToLower()));
+                            .ForEach(p => p.SetColumnName(p.GetColumnName(StoreObjectIdentifier.Table(p.DeclaringType.GetTableName()!, 
+                            ((IMutableEntityType)p.DeclaringType).GetDefaultSchema()!))?.ToLower()));
 
 #endif
         }

@@ -2,12 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Migrations.Context;
+using MigrationsRunner.Context;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace efcore.pgissue3145.MigrationsRunner.Migrations
+namespace MigrationsRunner.Migrations
 {
     [DbContext(typeof(ServerDataContext))]
     partial class ServerDataContextModelSnapshot : ModelSnapshot
@@ -21,7 +21,7 @@ namespace efcore.pgissue3145.MigrationsRunner.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Migrations.Entities.Setting", b =>
+            modelBuilder.Entity("MigrationsRunner.Entities.Setting", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
